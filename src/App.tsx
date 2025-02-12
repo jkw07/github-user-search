@@ -1,4 +1,5 @@
-import { ThemeProvider} from './components/ThemeContext'
+import { ThemeProvider } from './components/ThemeProvider'
+
 import { MainApp } from './components/MainApp'
 
 export const App = () => {
@@ -10,4 +11,6 @@ export const App = () => {
     </>
   )
 }
+
+//TODO: tablet & mobile design
 

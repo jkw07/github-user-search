@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext} from "react";
 import { ThemeVariant } from "./Themes";
 
-type ThemeProviderProps = {
+/* type ThemeProviderProps = {
     children: ReactNode,
-}
+} */
 
 type ThemeContextTypes = {
     theme: ThemeVariant,
@@ -15,7 +15,7 @@ export const ThemeContext = createContext<ThemeContextTypes>({
     toggleTheme: () => {}
 });
 
-export const ThemeProvider = ({children}: ThemeProviderProps) => {
+/* export const ThemeProvider = ({children}: ThemeProviderProps) => {
     const [theme, setTheme] = useState<ThemeVariant>(ThemeVariant.Dark);
 
     const toggleTheme = () => {
@@ -27,4 +27,4 @@ export const ThemeProvider = ({children}: ThemeProviderProps) => {
         {children}
         </ThemeContext.Provider>
     )
-}
+} */

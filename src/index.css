@@ -1,11 +1,11 @@
 
 :root {
   --dark-theme-background-color: #141c2f;
-  --light-theme-background-color: whitesmoke;
+  --light-theme-background-color: rgba(211, 211, 211, 0.753);
   --dark-theme-text-color: #e7eef8;
   --light-theme-text-color: black;
   --dark-theme-input-color: #1f2a48;
-  --light-theme-input-color: white;
+  --light-theme-input-color: whitesmoke;
   --search-color: #0079fe;
 }
 
@@ -27,7 +27,6 @@ html, body {
 header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
   width: 400px;
 }
 
@@ -46,12 +45,17 @@ header .logo i {
   padding-right: 10px;
 }
 
+.logo p {
+  margin: 0;
+}
+
 
 header button {
   width: 40px;
   height: 40px;
   border: none;
   cursor: pointer;
+  background: transparent;
 }
 
 .search-bar {
@@ -60,6 +64,8 @@ header button {
   border-radius: 12px;
   padding: 8px;
   width: 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .search-bar input {
@@ -88,6 +94,81 @@ header button {
   font-weight: bold;
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 8px;
+  width: 400px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.user-info .img {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.first-section {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.first-section span {
+  display: block;
+}
+
+.bio {
+  margin-bottom: 8px;
+}
+
+.user-login {
+  color: var(--search-color)
+}
+
+.second-section {
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.second-section span {
+  display: block;
+}
+
+.third-section {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.third-section div {
+  text-align: left;
+}
+
+.third-section i {
+  width: 20px;
+  padding-right: 10px;
+}
+
+.d-none {
+  height: 8px;
+}
+
+.no-data {
+  opacity: 0.5;
+}
+
 
 .dark {
   background-color: var(--dark-theme-background-color);
@@ -97,14 +178,6 @@ header button {
 .light {
   background-color: var(--light-theme-background-color);
   color: var(--light-theme-text-color)
-}
-
-.dark header button {
-  background-color: var(--dark-theme-background-color);
-}
-
-.light header button {
-  background-color: var(--light-theme-background-color);
 }
 
 .dark .search-bar {
@@ -131,4 +204,20 @@ header button {
 .light .search-bar input::placeholder {
   color: var(--light-theme-text-color);
   opacity: 0.5;
+}
+
+.dark .user-info {
+  background-color: var(--dark-theme-input-color);
+}
+
+.light .user-info {
+  background-color: var(--light-theme-input-color);
+}
+
+.dark .second-section {
+  background-color: var(--dark-theme-background-color);
+}
+
+.light .second-section {
+  background-color: var(--light-theme-background-color);
 }
