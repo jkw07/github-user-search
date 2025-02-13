@@ -23,7 +23,7 @@ export const UserInfo = ({userData}: {userData: userDataTypes | null}) => {
                 <div className="user-section first-section">
                     <div className="col">
                     <span className="user-name"><strong>{userData.name || "no available"}</strong></span>
-                    <span className="user-login">@{userData.login}</span>
+                    <span className="user-login"><a href={userData.html_url} target="_blank">@{userData.login}</a></span>
                     </div>
                     <div className="col joined">
                     <p>Joined {formatDate(userData?.created_at ?? null)}</p>
@@ -49,7 +49,7 @@ export const UserInfo = ({userData}: {userData: userDataTypes | null}) => {
 
                 <div className="row user-section third-section">
                     <div className="col-6 col-sm-6"><i className="fa-solid fa-location-dot"></i>{userData.location || <span className="no-data">Not available</span>}</div>
-                    <div className="col-6 col-sm-6"><i className="fa-brands fa-twitter"></i>{userData.twitter_username || <span className="no-data">Not available</span>}</div>
+                    <div className="col-6 col-sm-6"><i className="fa-brands fa-x-twitter"></i>{userData.twitter_username || <span className="no-data">Not available</span>}</div>
 
                     <div className="w-100 d-none d-md-block"></div>
 

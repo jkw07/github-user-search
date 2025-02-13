@@ -11,4 +11,5 @@ export type userDataTypes = {
     blog: string | null,
     company: string | null,
     created_at: string,
+    html_url: string;
 }

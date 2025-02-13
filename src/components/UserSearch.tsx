@@ -41,7 +41,10 @@ export const UserSearch = () => {
             <input autoCorrect="off" spellCheck="false" autoComplete="off" placeholder="Search GitHub username..." className="search-input" type="text" id="userSearch" name="user" value={username} onChange={(e)=> setUsername(e.target.value)} onKeyDown={handleKeyDown} required/>
             <button className="search-button" onClick={fetchUserData}>Search</button>
             </div>
-            {error && <p>{error}</p>}
+            {error && <div className="error-div">
+                    <i className="fa-solid fa-ban"></i>
+                    <span>{error}</span>
+                </div>}
             <UserInfo userData={userData}/>
         </>
     )

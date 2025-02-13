@@ -180,6 +180,19 @@ header button {
   opacity: 0.5;
 }
 
+.error-div {
+  color: red;
+}
+
+.error-div i {
+  margin-right: 10px;
+  color: red;
+}
+
+a {
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   header, .search-bar, .user-info {
     width: 450px;
@@ -205,6 +218,9 @@ header button {
   }
   .user-info {
     font-size: 14px;
+  }
+  .user-name {
+    font-size: 18px;
   }
   .user-info .img {
     margin-right: 20px;
