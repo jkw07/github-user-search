@@ -7,6 +7,7 @@
   --dark-theme-input-color: #1f2a48;
   --light-theme-input-color: whitesmoke;
   --search-color: #0079fe;
+  --search-color-hover: #0066fe;
 }
 
 html, body {
@@ -24,10 +25,15 @@ html, body {
   align-content: center;
 }
 
+header, .search-bar, .user-info {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  width: 400px;
 }
 
 header p {
@@ -49,7 +55,6 @@ header .logo i {
   margin: 0;
 }
 
-
 header button {
   width: 40px;
   height: 40px;
@@ -62,10 +67,7 @@ header button {
   display: flex;
   align-items: center;
   border-radius: 12px;
-  padding: 8px;
-  width: 400px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .search-bar input {
@@ -73,17 +75,18 @@ header button {
   border: none;
   background: transparent;
   padding: 10px;
-  font-size: 16px;
   outline: none;
+  font-size: 12px;
 }
 
 .search-bar button {
   background-color: var(--search-color);
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  color: var(--dark-theme-text-color)
+  color: var(--dark-theme-text-color);
+  font-size: 12px;
 }
 
 .search-bar i {
@@ -91,25 +94,19 @@ header button {
 }
 
 .search-bar button:hover {
-  font-weight: bold;
+  background-color: var(--search-color-hover);
 }
 
 .user-info {
-  display: flex;
-  align-items: center;
   border-radius: 12px;
-  padding: 8px;
-  width: 400px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  justify-content: space-between;
-  font-size: 10px;
+  padding: 15px;
+  font-size: 12px;
+  display: block;
 }
 
 .user-info .img {
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  float:left;
+  margin: 5px 15px 5px 15px;
 }
 
 .img img {
@@ -119,17 +116,28 @@ header button {
   object-fit: cover;
 }
 
+.user-data {
+  display: block;
+}
 .first-section {
-  padding-top: 10px;
-  padding-bottom: 5px;
+  margin: 10px;
+}
+
+.bio {
+  margin: 15px 10px 10px 10px;
+  padding: 10px;
+}
+
+.first-section div {
+  margin-bottom: 8px;
 }
 
 .first-section span {
   display: block;
 }
 
-.bio {
-  margin-bottom: 8px;
+.user-name {
+  font-size: 14px;
 }
 
 .user-login {
@@ -138,20 +146,23 @@ header button {
 
 .second-section {
   border-radius: 12px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.second-section span {
-  display: block;
+.second-section .col {
+  padding: 5px;
 }
 
 .third-section {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 10px;
 }
 
-
+.third-section div {
+  padding: 5px;
+}
 .third-section div {
   text-align: left;
 }
@@ -169,7 +180,128 @@ header button {
   opacity: 0.5;
 }
 
+@media (min-width: 768px) {
+  header, .search-bar, .user-info {
+    width: 450px;
+    max-width: 450px;
+    margin: 15px;
+  }
+  .user-info .img {
+    float:left;
+    margin: 5px 20px 5px 20px;
+  }
+  .second-section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .third-section div {
+    margin-bottom: 0;
+  }
+  .search-bar input {
+    font-size: 14px;
+  }
+  .search-bar button {
+    font-size: 14px;
+  }
+  .user-info {
+    font-size: 14px;
+  }
+  .user-info .img {
+    margin-right: 20px;
+  }
+  .third-section i {
+    width: 30px;
+  }
+  .second-section .col {
+    padding: 10px;
+  }
+  .third-section div {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
 
+@media (min-width: 992px) {
+  header, .search-bar, .user-info {
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+  }
+  .first-section {
+    margin-top: 0;
+    display:flex;
+  }
+  .joined {
+    text-align: right;
+  }
+  .third-section {
+    margin-bottom: 10px;
+  }
+  .third-section div {
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .user-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1px;
+    align-items:flex-start;
+  }
+  .user-info .img {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+  }
+  .img img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .user-info .user-data {
+    margin: 5px;
+  }
+  .bio {
+    margin: 10px;
+    padding: 0;
+  }
+  
+}
+
+
+/*@media (min-width: 1200px) {
+  header {
+    width: 500px;
+  }
+  header .logo i {
+    padding-right: 15px;
+  }
+  .search-bar {
+    width: 500px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .search-bar input {
+    font-size: 18px;
+  }
+  .user-info {
+    width: 500px;
+    font-size: 13px;
+  } 
+  .first-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+  .bio {
+    margin-bottom: 15px;
+  }
+  .second-section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}*/
+
+/*theme styles*/
 .dark {
   background-color: var(--dark-theme-background-color);
   color: var(--dark-theme-text-color)

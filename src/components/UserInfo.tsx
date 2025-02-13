@@ -14,40 +14,40 @@ export const UserInfo = ({userData}: {userData: userDataTypes | null}) => {
         })
     }
     return (
-        <div className="user-info row">
-            <div className="img col-sm-4">
+        <div className="user-info">
+            <div className="img">
                 <img src={userData.avatar_url} alt={userData.login}/>
             </div>
-            <div className="user-data col-sm-8">
+            <div className="user-data">
 
-                <div className="first-section row">
+                <div className="user-section first-section">
                     <div className="col">
-                    <span><strong>{userData.name || "no available"}</strong></span>
+                    <span className="user-name"><strong>{userData.name || "no available"}</strong></span>
                     <span className="user-login">@{userData.login}</span>
                     </div>
-                    <div className="col">
+                    <div className="col joined">
                     <p>Joined {formatDate(userData?.created_at ?? null)}</p>
                     </div>
                 </div>
-                <div className="bio">{userData.bio || "This profile has no bio"}</div>
+                <div className="bio user-section">{userData.bio || "This profile has no bio"}</div>
  
-                <div className="row second-section">
-                    <div className="col-sm">
+                <div className="user-section second-section">
+                    <div className="col">
                     <span>Repos</span>
-                    <span>{userData.public_repos}</span>
+                    <div><strong>{userData.public_repos}</strong></div>
                     </div>
-                    <div className="col-sm">
+                    <div className="col">
                     <span>Followers</span>
-                    <span>{userData.followers}</span>
+                    <div><strong>{userData.followers}</strong></div>
                     </div>
-                    <div className="col-sm">
+                    <div className="col">
                     <span>Following</span>
-                    <span>{userData.following}</span>
+                    <div><strong>{userData.following}</strong></div>
                     </div>
                 </div>
             
 
-                <div className="row third-section">
+                <div className="row user-section third-section">
                     <div className="col-6 col-sm-6"><i className="fa-solid fa-location-dot"></i>{userData.location || <span className="no-data">Not available</span>}</div>
                     <div className="col-6 col-sm-6"><i className="fa-brands fa-twitter"></i>{userData.twitter_username || <span className="no-data">Not available</span>}</div>
 
