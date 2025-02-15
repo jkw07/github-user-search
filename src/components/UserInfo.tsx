@@ -22,14 +22,14 @@ export const UserInfo = ({userData}: {userData: userDataTypes | null}) => {
 
                 <div className="user-section first-section">
                     <div className="col">
-                    <span className="user-name"><strong>{userData.name || "no available"}</strong></span>
+                    <span className="user-name"><strong>{userData.name || <span className="no-data">Not available</span>}</strong></span>
                     <span className="user-login"><a href={userData.html_url} target="_blank">@{userData.login}</a></span>
                     </div>
                     <div className="col joined">
                     <p>Joined {formatDate(userData?.created_at ?? null)}</p>
                     </div>
                 </div>
-                <div className="bio user-section">{userData.bio || "This profile has no bio"}</div>
+                <div className="bio user-section">{userData.bio || <span className="no-data">This profile has no bio</span>}</div>
  
                 <div className="user-section second-section">
                     <div className="col">

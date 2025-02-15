@@ -11,6 +11,3 @@ export const App = () => {
     </>
   )
 }
-
-//TODO: tablet & mobile design
-

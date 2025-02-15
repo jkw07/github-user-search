@@ -1,0 +1,285 @@
+:root {
+  --search-color: #0079fe;
+  --search-color-hover: #0066fe;
+}
+
+.dark {
+  --background-color: #141c2f;
+  --text-color: #e7eef8;
+  --input-color: #1f2a48;
+}
+
+.light {
+  --background-color: rgba(211, 211, 211, 0.753);
+  --text-color: black;
+  --input-color: whitesmoke;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main {
+  margin: 0;
+  min-height: 100vh;
+  place-items: center;
+  align-content: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  a {
+    text-decoration: none;
+  }
+  i:not(.search-bar i, .error-div i) {
+    color: var(--text-color);
+  }
+}
+
+header, .search-bar, .user-info {
+  width: 90%;
+  max-width: 400px;
+  margin: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  .logo {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    i {
+      padding-right: 10px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+  }
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: var(--input-color);
+  input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    font-size: 12px;
+    color: var(--text-color);
+  }
+  input::placeholder {
+    color: var(--text-color);
+    opacity: 0.5;
+  }
+  button {
+    background-color: var(--search-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--dark-theme-text-color);
+    font-size: 12px;
+  }
+  button:hover {
+    background-color: var(--search-color-hover);
+  }
+  i {
+    color: var(--search-color);
+  }
+}
+
+.user-info {
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 12px;
+  display: block;
+  background-color: var(--input-color);
+  .img {
+    float: left;
+    margin: 5px 15px 5px 15px;
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.user-data {
+  display: block;
+  .no-data {
+    opacity: 0.5;
+  }
+}
+
+.first-section {
+  margin: 10px;
+  div {
+    margin-bottom: 8px;
+  }
+  span {
+    display: block;
+  }
+  .user-name {
+    font-size: 14px;
+  }
+  .user-login {
+    color: var(--search-color);
+  }
+}
+
+.bio {
+  margin: 15px 10px 10px 10px;
+  padding: 10px;
+}
+
+.second-section {
+  border-radius: 12px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  .col {
+    padding: 5px;
+  }
+}
+
+.third-section {
+  margin: 10px;
+  div {
+    padding: 5px;
+    text-align: left;
+  }
+  i {
+    width: 20px;
+    padding-right: 10px;
+  }
+  .d-none {
+    height: 8px;
+  }
+}
+
+.error-div {
+  color: red;
+  i {
+    margin-right: 10px;
+    color: red;
+  }
+}
+
+@media (min-width: 768px) {
+  header, .search-bar, .user-info {
+    width: 450px;
+    max-width: 450px;
+    margin: 15px;
+  }
+  .user-info .img {
+    float: left;
+    margin: 5px 20px 5px 20px;
+  }
+  .second-section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .third-section div {
+    margin-bottom: 0;
+  }
+  .search-bar {
+    input {
+      font-size: 14px;
+    }
+    button {
+      font-size: 14px;
+    }
+  }
+  .user-info {
+    font-size: 14px;
+    .img {
+      margin-right: 20px;
+    }
+  }
+  .user-name {
+    font-size: 18px;
+  }
+  .second-section .col {
+    padding: 10px;
+  }
+  .third-section {
+    i {
+      width: 30px;
+    }
+    div {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  header, .search-bar, .user-info {
+    width: 600px;
+    max-width: 600px;
+    margin: 20px;
+  }
+  .first-section {
+    margin-top: 0;
+    display: flex;
+  }
+  .joined {
+    text-align: right;
+  }
+  .third-section {
+    margin-bottom: 10px;
+    div {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  .user-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1px;
+    align-items: flex-start;
+    .user-data {
+      margin: 5px;
+    }
+    .img {
+      display: flex;
+      justify-content: center;
+      margin: 5px;
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+  .bio {
+    margin: 10px;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=index.scss.map */
