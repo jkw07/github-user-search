@@ -1,17 +1,25 @@
 import { useState } from "react";
 
 import { userDataTypes } from "./userDataTypes";
-import { UserInfo } from "./UserInfo";
+import { UserCard } from "./UserCard";
+import { SearchInput } from "./SearchInput";
+import { LoadingInf } from "./Loading";
 
 export const UserSearch = () => {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState<userDataTypes | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const fetchUserData = async () => {
-    if (!username.trim()) return;
+    if (!username.trim()) {
+      setUserData(null);
+      setError(null);
+      return;
+    }
     try {
       setError(null);
+      setLoading(true);
       const response = await fetch(`https://api.github.com/users/${username}`);
       if (!response.ok) {
         throw new Error("User not found");
@@ -21,6 +29,8 @@ export const UserSearch = () => {
     } catch (error) {
       setUserData(null);
       setError((error as Error).message ?? "An unknown error occured");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -29,37 +39,28 @@ export const UserSearch = () => {
       fetchUserData();
     }
   };
+  const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
+  const handleButtonClick = () => {
+    fetchUserData();
+  };
   return (
     <>
-      <div className="search-bar">
-        <label htmlFor="userSearch">
-          <i className="fa-solid fa-magnifying-glass fa-xl"></i>
-        </label>
-        <input
-          autoCorrect="off"
-          spellCheck="false"
-          autoComplete="off"
-          placeholder="Search GitHub username..."
-          className="search-input"
-          type="text"
-          id="userSearch"
-          name="user"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={handleKeyDown}
-          required
-        />
-        <button className="search-button" onClick={fetchUserData}>
-          Search
-        </button>
-      </div>
+      <SearchInput
+        username={username}
+        handleKeyDown={handleKeyDown}
+        handleSearchInput={handleSearchInput}
+        handleButtonClick={handleButtonClick}
+      />
+      {loading && <LoadingInf />}
       {error && (
         <div className="error-div">
           <i className="fa-solid fa-ban"></i>
           <span>{error}</span>
         </div>
       )}
-      <UserInfo userData={userData} />
+      {!loading && <UserCard userData={userData} />}
     </>
   );
 };

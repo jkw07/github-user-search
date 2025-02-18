@@ -179,9 +179,6 @@ header {
     width: 20px;
     padding-right: 10px;
   }
-  .d-none {
-    height: 8px;
-  }
 }
 
 .error-div {
@@ -205,6 +202,9 @@ header {
   .second-section {
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+  .third-section .link {
+    margin-bottom: 5px;
   }
   .third-section div {
     margin-bottom: 0;
@@ -259,6 +259,9 @@ header {
       margin-bottom: 0;
       padding: 0;
     }
+    .link {
+    margin-bottom: 10px;
+  }
   }
   .user-info {
     display: grid;

@@ -9,7 +9,7 @@ type StatsDisplayProps = {
 
 export const StatsDisplay = ({ stats }: StatsDisplayProps) => {
   return (
-    <>
+    <div className="user-section second-section">
       {stats.map((stat: Stat) => (
         <div className="col">
           <span>{stat.name}</span>
@@ -18,6 +18,6 @@ export const StatsDisplay = ({ stats }: StatsDisplayProps) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
