@@ -1,4 +1,4 @@
 export enum ThemeVariant {
-    Light = "light",
-    Dark = "dark",
+  Light = "light",
+  Dark = "dark",
 }
