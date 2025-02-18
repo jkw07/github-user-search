@@ -1,4 +1,5 @@
 import { userDataTypes } from "./userDataTypes";
+import { StatsDisplay } from "./StatsDisplay";
 
 export const UserInfo = ({ userData }: { userData: userDataTypes | null }) => {
   if (!userData) {
@@ -13,6 +14,13 @@ export const UserInfo = ({ userData }: { userData: userDataTypes | null }) => {
       year: "numeric",
     });
   };
+
+  const stats = [
+    { name: "Repos", number: userData.public_repos },
+    { name: "Followers", number: userData.followers },
+    { name: "Following", number: userData.following },
+  ];
+
   return (
     <div className="user-info">
       <div className="img">
@@ -45,24 +53,7 @@ export const UserInfo = ({ userData }: { userData: userDataTypes | null }) => {
         </div>
 
         <div className="user-section second-section">
-          <div className="col">
-            <span>Repos</span>
-            <div>
-              <strong>{userData.public_repos}</strong>
-            </div>
-          </div>
-          <div className="col">
-            <span>Followers</span>
-            <div>
-              <strong>{userData.followers}</strong>
-            </div>
-          </div>
-          <div className="col">
-            <span>Following</span>
-            <div>
-              <strong>{userData.following}</strong>
-            </div>
-          </div>
+          <StatsDisplay stats={stats} />
         </div>
 
         <div className="row user-section third-section">

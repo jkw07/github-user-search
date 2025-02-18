@@ -63,5 +63,3 @@ export const UserSearch = () => {
     </>
   );
 };
-
-//TODO: ladowanie
